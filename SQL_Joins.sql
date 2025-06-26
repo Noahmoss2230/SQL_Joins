@@ -8,7 +8,7 @@ using the products table and the categories table, return the product name and t
 /* joins: find all product names, product prices, and products ratings that have a rating of 5 */
  select p.Name, p.Price, r.Rating from products as p
  inner join reviews as r on r.productID = p.productID
- where r.Rating = '5';
+ where r.Rating = 5;
 /* joins: find the employee with the most total quantity sold.  use the sum() function and group by */
 select e.FirstName, e.LastName, Sum(s.quantity) as total
 from sales as s
@@ -24,11 +24,11 @@ where c.Name = 'Appliances' or c.Name = 'Games';
 select p.Name, Sum(s.quantity) as 'Total Sold', Sum(s.quantity * s.PricePerUnit) as 'Total Price'
 from products as p
 inner join sales as s on s.ProductID = p.ProductID
-where p.ProductID = '97';
+where p.ProductID = 97;
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
 select p.Name, r.Reviewer, r.Rating, r.comment
 from products as p
-inner join reviews as r on p.ProductID = p.ProductID
+inner join reviews as r on r.ProductID = p.ProductID
 where p.ProductID = 857 and r.rating = 1;
 -- ------------------------------------------ Extra - May be difficult
 /* Your goal is to write a query that serves as an employee sales report.
